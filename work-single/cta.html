@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026',
+              light: '#ABABAB'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+        .ordered-heading {
+            position: relative;
+        }
+
+        .ordered-heading:before {
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            content: '0' counter(line-number);
+            font-size: 17px;
+            font-weight: 500;
+            font-family: 'CircularStd';
+            @apply text-logo;
+        }
+
+        .container {
+            counter-reset: line-number;
+        }
+        h2 {
+            counter-increment: line-number;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="py-[180px] container max-w-[983px] m-auto">
+        <div class="flex justify-center items-center gap-x-[76px]">
+            <h1 class="text-center text-[52px] tracking-[1px] leading-[76px]">Let's Get Started</h1>
+            <a href="#" class="hover:bg-dark rounded-full bg-logo text-white py-[22px] px-[37px] font-bold text-[12px]">START YOUR PROJECT</a>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026',
+              light: '#ABABAB'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+        .ordered-heading {
+            position: relative;
+        }
+
+        .ordered-heading:before {
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            content: '0' counter(line-number);
+            font-size: 17px;
+            font-weight: 500;
+            font-family: 'CircularStd';
+            @apply text-logo;
+        }
+
+        .container {
+            counter-reset: line-number;
+        }
+        h2 {
+            counter-increment: line-number;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="bg-dark py-[180px]">
+        <div class="container max-w-[1200px] m-auto">
+            <div class="flex items-center gap-x-[120px]">
+                <div>
+                    <h1 class="text-[190px] leading-[200px] text-center">
+                        <span class="text-logo">S</span>
+                        <span class="text-white">E</span>
+                        <span class="text-logo">R</span>
+                        <span class="text-logo">V</span>
+                        <br>
+                        <span class="text-logo">I</span>
+                        <span class="text-logo">C</span>                        
+                        <span class="text-logo">E</span>
+                        <span class="text-white">S</span>
+                      </h1>
+                </div>
+                <div class="max-w-[400px]">
+                    <p class="text-white text-[21px] -trailing-[1px] leading-[33px] font-medium mb-[45px]">
+                        Our success is measured by our inability to say “no”. We gather soft and hard skills from top talents globally to be able to do literally anything you can imagine tech-wise, wherever you are, at any time.
+
+                    </p>
+                    <ul class="pl-[30px] list-image-[url(img/checkmark.svg)] text-white font-light">
+                        <li>
+                            <a class="relative bottom-[10px]" href="#">Creative Web Design</a>
+                        </li>
+                        <li>
+                            <a class="relative bottom-[10px]" href="#">Advanced Web Development</a>
+                        </li>
+                        <li>
+                            <a class="relative bottom-[10px]" href="#">Inbound Digital Marketing</a>
+                        </li>
+                        <li>
+                            <a class="relative bottom-[10px]" href="#">WordPress Development</a>
+                        </li>
+                        <li>
+                            <a class="relative bottom-[10px]" href="#">E-Commerce Development</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

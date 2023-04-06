@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026',
+              light: '#ABABAB'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+        .ordered-heading {
+            position: relative;
+        }
+
+        .ordered-heading:before {
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            content: '0' counter(line-number);
+            font-size: 17px;
+            font-weight: 500;
+            font-family: 'CircularStd';
+            @apply text-logo;
+        }
+
+        .container {
+            counter-reset: line-number;
+        }
+        h2 {
+            counter-increment: line-number;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="py-[180px] container max-w-[983px] m-auto">
+        <h1 class="text-center text-[52px] tracking-[1px] leading-[76px] mb-[80px] text-logo">NovaVet</h1>
+        
+        <div class="flex gap-x-[150px] justify-between mb-[180px]">
+            <div class="text-[15px] leading-[28px] max-w-[660px]">
+                <h2 class="ordered-heading text-[46px] tracking-[1px] leading-[67px] mb-[30px] w-full">The Brief</h2>
+                <p>Martin Building Company is a multidisciplinary design and development property firm based in San Francisco, USA.</p>
+                <br>
+                <p>They are well known for their intriguing blend of stunning contemporary architecture and civic responsibility, which can be seen in all their projects – creating exceptional and sustainable urban environments.</p>
+                <br>
+                <p>WebDifferent were not only tasked with bringing their online presence up to date, but also creating something beautiful and unique complimenting their stunning property design. They wanted the new platform to be forwarding thinking, utilising the latest web technologies and design trends keeping them one step ahead of their competitors.</p>
+                </p>
+            </div>
+            <div>
+                <p class="text-logo uppercase mb-[10px] font-bold text-[15px]">Industry</p>
+                <p class="mb-[15px] font-bold text-[15px]">Real estate</p>
+                <p class="text-logo uppercase mb-[10px] mt-[30px] font-bold text-[15px]">Location</p>
+                <p class="mb-[15px] font-bold text-[15px]">United States</p>
+                <p class="text-logo uppercase mb-[10px] mt-[30px] font-bold text-[15px]">Skills</p>
+                <p class="mb-[15px] font-bold  text-[15px] mb-[10px]">Web Design</p>
+                <p class="mb-[15px] font-bold text-[15px] mb-[10px]">Web Development</p>
+                <p class="mb-[15px] font-bold text-[15px] mb-[10px]">WordPress</p>
+                <p class="mb-[15px] font-bold text-[15px]">Gutenberg</p>
+                <p class="text-logo uppercase mb-[10px] mt-[30px] font-bold text-[15px]">Link</p>
+                <p class="mb-[15px] font-bold text-[15px]">websitedifferent.com</p>
+            </div>
+        </div>
+        <img class="w-full" src="img/novavet.png" alt="Image">
+        <div class="pt-[180px]">
+            <h2 class="ordered-heading text-[46px] tracking-[1px] leading-[67px] mb-[30px] w-full">Our Approach</h2>
+            <div>
+                <p>We wanted to do something special for this project so we looked into new techniques and trends for the UX/UI. These included a fullscreen grid-style menu system and cutting-edge parallax animation, all of which was incorporated within an editorial style layout.</p>
+                <br>
+                <p>The project case studies were also a big focus for us, so we designed a bespoke component that was a card-based, with draggable navigation. As the site is built in React technology, the user is able to journey through the portfolio without it feeling like you are loading new pages.</p>
+                <br>
+                <p>There were quite varied amounts of content for each project, therefore we approached this with a modular content management solution, where components can be toggled on or off making sure the layouts look great regardless of the content size. This meant projects with 30 images looked just as good as projects with 10. </p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

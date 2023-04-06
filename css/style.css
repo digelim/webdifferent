@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'CircularStd';
+  src: url(../fonts/circularstd-bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url(../fonts/circularstd-medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url(../fonts/circularstd-light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'SofiaPro';
+  src: url(../fonts/SofiaPro.ttf);
+  font-weight: 700;
+}
+
+body {
+  font-family: 'CircularStd';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'SofiaPro';
+}

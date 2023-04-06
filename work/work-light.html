@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026',
+              light: '#ABABAB'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+        .active {
+            border: 1px solid black;
+            padding: 12px 20px;
+            @apply text-logo;
+            
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="py-[180px]">
+        <div class="max-w-[1140px] container m-auto px-[20px]">
+            <nav class="mb-[95px]">
+            <ul class="list-none flex gap-x-[20px] items-center">
+                <li class="active">
+                    <a href="#">All</a>
+                </li>
+                <li class="text-light">
+                    <a href="#">Web Design</a>
+                </li>
+                <li class="text-light">
+                    <a href="#">Web Development</a>
+                </li>
+                <li class="text-light">
+                    <a href="#">Marketing</a>
+                </li>
+                <li class="text-light">
+                    <a href="#">Video</a>
+                </li>
+                <li class="text-light">
+                    <a href="#">E-commerce</a>
+                </li>
+            </ul>
+            </nav>
+            <div class="flex justify-between items-center">
+                <div class="grid grid-cols-2 gap-x-[8%]">
+                    <div>
+                        <div class="mb-[160px]">
+                            <img src="img/work-1.jpg" alt="Image" class="object-cover mb-[26px]"/>
+                            <h3 class="text-logo uppercase gap-x-[15px] mb-[5px] flex text-[12px] tracking-[2px]">
+                                <a href="#" class="hover:text-dark">WEB DESIGN</a>
+                                <a href="#" class="hover:text-dark">WEB DEVELOPMENT</a>
+                            </h3>
+                            <h4 class="text-[42px] tracking-[1px] mb-[10px]">tangerine</h4>
+                            <p class="text-[16px] leading-[25px] font-light">We took on the challenge of creating the new website for tangerine, a global design pioneer.</p>
+                        </div>
+                        <div class="mb-[160px]">
+                            <img src="img/work-3.jpg" alt="Image" class="object-cover mb-[26px]"/>
+                            <h3 class="text-logo uppercase gap-x-[15px] mb-[5px] flex text-[12px] tracking-[2px]">
+                                <a href="#" class="hover:text-dark">WEB DESIGN</a>
+                                <a href="#" class="hover:text-dark">WEB DEVELOPMENT</a>
+                            </h3>
+                            <h4 class="text-[42px] tracking-[1px] mb-[10px]">tangerine</h4>
+                            <p class="text-[16px] leading-[25px] font-light">We took on the challenge of creating the new website for tangerine, a global design pioneer.</p>
+                        </div>
+                    </div>
+                    <div class=" mt-[158px]">
+                        <div class="mb-[160px]">
+                            <img src="img/work-2.jpg" alt="Image" class="object-cover mb-[26px]"/>
+                            <h3 class="text-logo uppercase gap-x-[15px] mb-[5px] flex text-[12px] tracking-[2px]">
+                                <a href="#" class="hover:text-dark">WEB DESIGN</a>
+                                <a href="#" class="hover:text-dark">WEB DEVELOPMENT</a>
+                            </h3>
+                            <h4 class="text-[42px] tracking-[1px] mb-[10px]">tangerine</h4>
+                            <p class="text-[16px] leading-[25px] font-light">We took on the challenge of creating the new website for tangerine, a global design pioneer.</p>
+                        </div>
+                        <div class="mb-[160px]">
+                            <img src="img/work-4.jpg" alt="Image" class="object-cover mb-[26px]"/>
+                            <h3 class="text-logo uppercase gap-x-[15px] mb-[5px] flex text-[12px] tracking-[2px]">
+                                <a href="#" class="hover:text-dark">WEB DESIGN</a>
+                                <a href="#" class="hover:text-dark">WEB DEVELOPMENT</a>
+                            </h3>
+                            <h4 class="text-[42px] tracking-[1px] mb-[10px]">tangerine</h4>
+                            <p class="text-[16px] leading-[25px] font-light">We took on the challenge of creating the new website for tangerine, a global design pioneer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
