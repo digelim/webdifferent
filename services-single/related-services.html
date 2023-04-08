@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#202020',
+            logo: '#e32026'
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    document.getElementById('separate').addEventListener('click', e => {
+    document.querySelector('main').classList.toggle('depth');
+    });
+
+    document.getElementById('animate').addEventListener('click', e => {
+    document.querySelector('main').classList.toggle('no-animation');
+    });
+
+    var blend = true;
+    document.getElementById('blend').addEventListener('click', e => {
+    blend = !blend;
+    document.documentElement.style.setProperty('--blend', blend ? 'multiply' : 'normal');
+    });
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <style type="text/tailwindcss">
+    :root {
+        --pixel: 1px;
+        --cover: #212123;
+        --duration: 800ms;
+        --covered: calc(var(--pixel) * 5); /*6 frames, 5 covered at a time */
+        --space: white; /* will cause transparency when mix blend mode multiply */
+        --w: 60vw;
+        --h: 50vh;
+        
+        --depth-base: 0px;
+        --direction: alternate;
+        
+        --blend: multiply;
+
+    }
+    .image-hover div {
+        opacity: 0;
+        transition: opacity 300ms ease;
+    }
+    .image-hover:hover div {
+        opacity: 1
+    }
+.image-hover div {
+  --offset: calc(var(--pixel) * 1);
+  --background-image: radial-gradient(circle, #transparent 0%, #transparent);
+  
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background: linear-gradient(to right, transparent 0, transparent calc(var(--pixel)), var(--space) var(--pixel), var(--space) calc(var(--covered))),
+    var(--background-image);
+  mix-blend-mode: var(--blend);
+  
+  background-position: calc(var(--offset) - calc(var(--pixel) * 1)) 0, center center;
+  background-size: calc(var(--pixel) * 6) 100%, 100% 100%;
+  
+  /* this is for separating out the images to examine */
+  transform: translateY(var(--depth, 0));
+  transition: transform var(--duration) ease-in-out;
+  --depth: calc(var(--depth-base) * 5);
+}
+
+.image-hover div:nth-of-type(2) {
+  --offset: calc(var(--pixel) * 2);
+  --background-image: radial-gradient(circle, #e32026 0%, #transparent 20%);
+  --depth: calc(var(--depth-base) * 4);
+}
+.image-hover div:nth-of-type(3) {
+  --offset: calc(var(--pixel) * 3);
+  --background-image: radial-gradient(circle, #e32026 20%, #transparent 40%);
+  --depth: calc(var(--depth-base) * 3);
+}
+.image-hover div:nth-of-type(4) {
+  --offset: calc(var(--pixel) * 4);
+  --background-image: radial-gradient(circle, #e32026 40%, #transparent 60%);
+  --depth: calc(var(--depth-base) * 2);
+}
+.image-hover div:nth-of-type(5) {
+  --offset: calc(var(--pixel) * 5);
+  --background-image: radial-gradient(circle, #e32026 60%, #transparent 75%);
+  --depth: calc(var(--depth-base) * 1);
+}
+.image-hover div:nth-of-type(6) {
+  --offset: calc(var(--pixel) * 6);
+  --background-image: radial-gradient(circle, #e32026 80%, #transparent);
+  --depth: calc(var(--depth-base) * 0);
+}
+
+
+    .depth {
+    --depth-base: calc(var(--h) / 1);
+    }
+    .no-animation {
+    --show: 0;
+    }
+
+    .primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: calc(var(--pixel) * -12);
+    bottom: 0;
+    left: calc(var(--pixel) * -12);
+    background: linear-gradient(to right, transparent 0px, transparent calc(var(--pixel) * 1), var(--cover) calc(var(--pixel) * 1), var(--cover) calc(var(--pixel) * 6));
+    will-change: transform, opacity;
+    transition: opacity var(--duration) linear;
+    animation: slide var(--duration) infinite var(--direction) linear;
+    mix-blend-mode: normal;
+    image-rendering: crisp-edges;
+    opacity: var(--show, 1);
+    
+    background-size: calc(var(--pixel) * 6) 100%;
+    }
+
+    @keyframes slide {
+    100% {
+        transform: translateX(var(--covered));
+    }
+    }
+
+
+    .image-hover {
+    position: relative;
+    transition: transform var(--duration) ease-in-out;
+    background: white;
+    transform: scale(1);
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="py-[180px] max-w-[1024px] container m-auto px-[20px]">
+    <h2 class="mb-[35px] text-[52px] tracking-[.28px]">Related Work</h2>
+    <div class="grid grid-cols-2 gap-x-[30px]">
+      <div>
+        <div class="image-hover relative">
+            <img class="object-cover mb-[28px]" src="img/work-2.jpg" alt="Image">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="primary"></div>
+            </div>
+        </div>
+        <div class="flex gap-x-[10px] mb-[2px]">
+            <a href="#" class="hover:text-dark text-logo text-[12px] uppercase">Web Design</a>
+            <a href="#" class="hover:text-dark text-logo text-[12px] uppercase">Web Development</a>
+        </div>
+        <h3 class="text-[42px] mb-[7px]">Matchroom</h3>
+      </div>
+      <div>
+        <div class="image-hover relative">
+            <img class="object-cover mb-[28px]" src="img/work-6.jpg" alt="Image">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div class="primary"></div>
+            </div>
+        </div>
+        <div class="flex gap-x-[10px] mb-[2px]">
+            <a href="#" class="hover:text-dark text-logo text-[12px] uppercase">Web Design</a>
+            <a href="#" class="hover:text-dark text-logo text-[12px] uppercase">Web Development</a>
+        </div>
+        <h3 class="text-[42px] mb-[7px]">Matchroom</h3>
+      </div>
+    </div>
+    <div class="text-center">
+        <div class="mt-[80px] inline-flex rounded-full bg-gradient-to-r from-logo to-dark p-[2px]">
+            <div class="rounded-full bg-white hover:bg-transparent back">
+                <a href="#" class="inline-flex items-center hover:text-white justify-center uppercase w-full h-full text-[12px] py-[18px] px-[34px] tracking-[1px] font-black text-black">VIEW ALL RELATED</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
