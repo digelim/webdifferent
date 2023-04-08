@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026',
+              light: '#ABABAB'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+        .active {
+            @apply text-logo bg-[#FFE8E8];
+            
+        }
+
+        .team-member:hover span, .team-member:hover img {
+          opacity: 1;
+        }
+
+        .team-member {
+          text-align: left;
+        }
+    
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+        $('.team-member').on('mousemove', function(event) {
+          $(this).find('img').css('left', (event.pageX - 300) * 1.1 ).css('transform', 'scale(' + ( event.pageX /window.innerWidth * event.pageY / window.innerHeight ) * 4+ ')');
+          $(this).find('img').css('top', event.pageY / 1.2);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="py-[180px] bg-[url('img/globe.png')]">
+        <div class="max-w-[1100px] container m-auto px-[20px] flex flex-col items-center">
+          <div class="team-member">
+            <p class="font-bold text-[41px] text-white uppercase">DAVID BENNETT</p>
+            <span class="opacity-0 text-white font-light text-[20px] mb-[15px]">Scientist, Australia</span>
+            <img src="img/team-1.jpeg" alt="Image" class="absolute opacity-0 w-[205px] h-[205px] object-cover">
+          </div>
+          <div class="team-member">
+            <p class="font-bold text-[41px] text-white uppercase">DIOGO ANGELIM</p>
+            <span class="opacity-0 text-white font-light text-[20px] mb-[15px]">Developer, Brazil</span>
+            <img src="img/team-2.png" alt="Image" class="absolute opacity-0 w-[205px] h-[205px] object-cover">
+          </div>
+          <div class="team-member">
+            <p class="font-bold text-[41px] text-white uppercase">Angelina Jolie</p>
+            <span class="opacity-0 text-white font-light text-[20px] mb-[15px]">Actress, United Kingdom</span>
+            <img src="img/team-3.jpeg" alt="Image" class="absolute opacity-0 w-[205px] h-[205px] object-cover">
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
