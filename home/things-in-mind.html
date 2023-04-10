@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+      .ordered-heading {
+            position: relative;
+        }
+
+        .ordered-heading:before {
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            content: '0' counter(line-number);
+            font-size: 17px;
+            font-weight: 500;
+            font-family: 'CircularStd';
+            @apply text-logo;
+        }
+
+        .container {
+            counter-reset: line-number;
+        }
+
+        h3 {
+            counter-increment: line-number;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="bg-dark ">
+      <div class="py-[180px] max-w-[1080px] m-auto container px-[20px]">
+        <h2 class="text-white mb-[375px] text-[52px] leading-[61px]">Our creative digital agency designs and develops bespoke websites with 
+          <span class="text-logo">three things in mind</span>
+        </h2>
+        <div class="flex justify-between gap-[100px] mb-0">
+          <div class="max-w-[400px] container ">
+            <h3 class="ordered-heading text-[52px] leading-[61px] text-white mb-[15px]">
+              Appeal
+            </h3>
+            <p class="text-[21px] leading-[35px] text-white mb-[360px]">
+              Developing stunning one-of-a-kind digital design that catches people’s eye and brings your brand to life online.
+            </p>
+            <h3 class="ordered-heading text-[52px] leading-[61px] text-white mb-[15px]">
+              Insight
+            </h3>
+            <p class="text-[21px] leading-[35px] text-white mb-[360px]">
+              Developing stunning one-of-a-kind digital design that catches people’s eye and brings your brand to life online.
+            </p>
+            <h3 class="ordered-heading text-[52px] leading-[61px] text-white mb-[15px]">
+              Action
+            </h3>
+            <p class="text-[21px] leading-[35px] text-white">
+              Developing stunning one-of-a-kind digital design that catches people’s eye and brings your brand to life online.
+            </p>
+          </div>
+          <div class="max-w-[526px] before:content-[url(img/detail.svg)]  before:absolute relative before:left-[10px] before:top-[30px]">
+            <img class="shadow-md w-full z-1 relative rounded-lg" src="img/photo.png" alt="Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

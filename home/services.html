@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style type="text/tailwindcss">
+      .active {
+        @apply text-logo;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="py-[180px] max-w-[1080px] m-auto container px-[20px]">
+        <div class="flex justify-between gap-[100px]">
+          <div class="container">
+            <h2 class="mb-[30px] text-[15px] tracking-[1px] uppercase">
+              OUR SERVICES
+            </h2>
+            <h3 class="text-[52px] active text-[#DBDBDB]">
+              Web Design
+            </h3>
+            <h3 class="text-[52px] text-[#DBDBDB]">
+              Web Development
+            </h3>
+            <h3 class="text-[52px] text-[#DBDBDB]">
+              Digital Marketing
+            </h3>
+          </div>
+          <div class="w-full before:content-[url(img/detail-white.svg)]  before:absolute relative max-w-[470px] before:top-[30px] before:w-full before:h-auto">
+            <img class="shadow-md w-full z-1 relative rounded-lg" src="img/design.png" alt="Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

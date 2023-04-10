@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#202020',
+              logo: '#e32026',
+              light: '#ABABAB'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    </script>
+  </head>
+  <body>
+    <div class="py-[180px] bg-[url(img/why-us-bg.png)]">
+        <div class="flex max-w-[1000px] container justify-between m-auto gap-x-[8%]">
+          <div class="w-full">
+            <div class="relative">
+              <div class="before:content-[url(img/detail.svg)] before:mix-blend-multiply before:absolute relative before:left-[30px] before:top-[30px]">
+                <img class="z-index-1 relative" src="img/why-us.png" alt="Image"/>
+              </div>
+              <div class="absolute top-0 left-0 w-full h-full border-radius-lg p-[65px] flex items-end">
+                <p class="before:content-[url(img/quote-outline.svg)] text-[16px] text-white "><span class="font-medium block">Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas.
+                </span><br><span class="font-medium">Steve Rogers</span><span class="font-light"> – CEO at New Digital</span></span></p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-logo text-[12px] mb-[10px]">WHY US</h3>
+            <h2 class="text-[32px] leading-[42px] mb-[30px]">On a mission to make things right</h2>
+            <p class="font-light text-[#585858] text-[20px] leading-[30px]">
+              Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas.
+              <br><br>
+              Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec.
+              <br><br>
+              Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec.
+            </p>
+          </div>
+
+        </div>
+    </div>
+  </body>
+</html>
