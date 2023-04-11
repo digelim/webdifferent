@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#202020',
+            logo: '#e32026'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <style type="text/tailwindcss">
+    .ordered-heading {
+        position: relative;
+    }
+
+    .ordered-heading:before {
+        position: absolute;
+        left: -35px;
+        top: 5px;
+        content: '0' counter(line-number);
+        font-size: 17px;
+        font-weight: 500;
+        font-family: 'CircularStd';
+        @apply text-logo;
+    }
+
+    .container {
+        counter-reset: line-number;
+    }
+    h4 {
+        counter-increment: line-number;
+    }
+
+    .process-left {
+      margin-left: -60px;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .process-left:before {
+      content: url(img/align-left.svg);
+      position: relative;
+      left: 30px;
+      top: 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    .process-right {
+      margin-left: 60px;
+      position: relative;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .process-right:before {
+      content: url(img/align-right.svg);
+      position: relative;
+      left: -40px;
+      top: 0;
+      width: 200px;
+      height: 200px;
+    }
+    
+</style>
+</head>
+<body>
+  <div class="bg-dark">
+    <div class="py-[180px] max-w-[1040px] container m-auto px-[20px]">
+      <div class="flex justify-between">
+        <div>
+          <h3 class="mb-[15px] text-logo uppercase tracking-[2px]">services</h3>
+          <h2 class="max-w-[430px] text-white mb-[20px] text-[52px] tracking-[1px] leading-[62px]">WordPress Web Development</h2>
+          <p class="text-white max-w-[320px] mb-[100px] font-medium text-[15px] leading-[26px]">Don’t ever try to reinvent the wheel. We use proven technologies to give you an edge when it comes to usability, security, and performance.</p>
+        </div>
+      </div>
+      <div class="mt-[180px] flex justify-end">
+        <div>
+          <h2 class="max-w-[430px] text-white mb-[20px] text-[52px] tracking-[1px] leading-[62px]">The Process</h2>
+          <p class="text-white max-w-[320px] mb-[100px] font-medium text-[15px] leading-[26px]">There is a lot of involvment between you and us. We want you to be sure you are the missing piece of the puzzle from when you decide to work with us, to the end.</p>
+          <div>
+            <h4 class="ordered-heading text-white text-[24px] mb-[15px]">Research</h4>
+            <p class="max-w-[350px] font-light text-[15px] leading-[26px] text-white opacity-[0.75]">There is a lot of involvment between you and us. We want you to be sure you are the missing piece of the puzzle from when you decide to work with us.</p>
+          </div>
+          <div class="process-left">
+            <h4 class="ordered-heading mt-[10px] text-white text-[24px] mb-[15px]">Planning</h4>
+            <p class="max-w-[350px] font-light text-[15px] leading-[26px] text-white opacity-[0.75]">There is a lot of involvment between you and us. We want you to be sure you are the missing piece of the puzzle from when you decide to work with us.</p>
+          </div>
+          <div class="process-right">
+            <h4 class="ordered-heading mt-[10px] text-white text-[24px] mb-[15px]">Coding</h4>
+            <p class="max-w-[350px] font-light text-[15px] leading-[26px] text-white opacity-[0.75]">There is a lot of involvment between you and us. We want you to be sure you are the missing piece of the puzzle from when you decide to work with us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
